@@ -1,0 +1,424 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #4b2e39;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent both horizontal and vertical scrolling */
+  background-color: #f1f1cf;
+}
+
+/* 3D Animated Background Boxes */
+.background-box {
+  position: fixed; /* Keeps the boxes in a fixed position */
+  width: 100px;
+  height: 100px;
+  background-color: rgba(140, 77, 50, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease-out;
+  z-index: -1; /* Ensuring the boxes are behind the content */
+}
+
+/* Positioning each background box differently */
+.background-box.box-1 { top: 10%; left: 8%; }
+.background-box.box-2 { top: 25%; right: 15%; }
+.background-box.box-3 { bottom: 3%; left: 20%; }
+.background-box.box-4 { top: 15%; right: 35%; }
+.background-box.box-5 { bottom: 15%; left: 5%; }
+.background-box.box-6 { top: 50%; right: 2%; }
+.background-box.box-7 { bottom: 40%; left: 70%; }
+.background-box.box-8 { top: 7%; right: 10%; }
+.background-box.box-9 { bottom: 60%; left: 30%; }
+.background-box.box-10 { top: 5%; right: 60%; }
+.background-box.box-11 { bottom: 25%; left: 60%; }
+.background-box.box-12 { top: 85%; right: 30%; }
+.background-box.box-13 { bottom: 50%; left: 10%; }
+.background-box.box-14 { top: 60%; right: 50%; }
+.background-box.box-15 { bottom: 5%; left: 80%; }
+.background-box.box-16 { top: 90%; right: 15%; }
+
+/* Home Page Styling */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it covers the full height of the viewport */
+  position: relative; /* Position relative for content layering */
+  z-index: 10; /* Bring the content above the background boxes */
+}
+
+/* Content Container */
+.content-container {
+  display: flex;
+  justify-content: space-between; /* Use space-between for equal spacing */
+  align-items: flex-start; /* Align items at the top */
+  width: 100%;
+  max-width: 1200px; /* Set a max width for the content */
+  padding: 20px; /* Add padding to the content */
+}
+
+/* Text Section */
+.text-section {
+  flex: 1; /* Allow text section to take available space */
+  padding-right: 50px; /* Add padding to the right */
+  margin-top: -130px; /* Adjust vertical positioning from the top */
+  margin-right: 150px;
+}
+
+/* Font Styling and Hover Effect for Bubbling Letters */
+.text-section h1, .text-section p {
+  font-family: 'Helvetica Neue'; /* Updated font */
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+
+/* Increase Font Sizes */
+.text-section h1 {
+  font-size: 3.5rem; /* Adjusted font size for heading */
+}
+
+.text-section p {
+  font-size: 1.5rem; /* Adjusted font size for paragraph */
+}
+
+.text-section h1 span, .text-section p span {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #4b2e39;
+  position: relative;
+}
+
+/* Hover effect on each letter */
+.text-section h1 span:hover, .text-section p span:hover {
+  transform: translateY(-10px) scale(1.2); /* Bubble effect */
+  color: #ff6347; /* Change color on hover */
+}
+
+/* Image Section */
+.image-section {
+  flex: 1; /* Allow image section to take available space */
+  display: flex;
+  justify-content: right; /* Center the image horizontally */
+  align-items: flex-start; /* Align the image to the top */
+  margin-top: -150px;
+}
+
+/* Image Animation */
+.toggle-image {
+  width: 280px; /* Set a specific width */
+  height: 300px; /* Set a specific height */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: contain; /* Use cover to maintain aspect ratio */
+  box-shadow: 10px 40px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  animation: toggle-vertical 1s infinite alternate; /* Infinite vertical toggle */
+}
+
+/* Keyframes for vertical toggle animation */
+@keyframes toggle-vertical {
+  0% {
+    transform: translateY(0); /* Start position */
+  }
+  100% {
+    transform: translateY(-30px); /* End position */
+  }
+}
+
+/* Navbar Styling */
+nav {
+  background-color: #8c4d32;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff6347;
+}
+
+
+
+
+/* Scoped Contact Page Styling */
+.contact-page {
+  font-family: 'Arial', sans-serif;
+  color: #4b2e39;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #f1f1cf;
+  padding: 20px;
+}
+
+/* Contact Form Styling */
+.contact-page form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-page form div {
+  margin-bottom: 15px;
+}
+
+.contact-page form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-page form input, .contact-page form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4b2e39;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+.contact-page form button {
+  background-color: #8c4d32;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-page form button:hover {
+  background-color: #ff6347;
+}
+
+/* Social Links Styling */
+.contact-page ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-page ul li {
+  margin: 0 15px;
+}
+
+.contact-page ul li a {
+  text-decoration: none;
+  color: #8c4d32;
+  font-weight: bold;
+}
+
+.contact-page ul li a:hover {
+  color: #ff6347;
+}
+
+/* Headings Styling */
+.contact-page h1, .contact-page h2 {
+  text-align: center;
+  color: #4b2e39;
+}
+
+.contact-page h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.contact-page h2 {
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+.contact-page ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.contact-page ul li a i {
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 1.2rem; /* Adjust icon size */
+  color: #8c4d32; /* Change icon color */
+}
+
+/* About Section Styling */
+
+
+.about {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+  min-height: 100vh; /* Ensure it covers the full height of the viewport */
+  position: relative; /* Position relative for content layering */
+  z-index: 10; /* Bring the content above the background boxes */
+  padding: 20px; /* Add padding around the content */
+}
+
+/* Title Styling */
+
+/* Description Styling */
+.about-description {
+  font-size: 1.5rem; /* Font size for description */
+  color: #4b2e39; /* Matching text color */
+  line-height: 1.4; /* Increase line height for readability */
+  max-width: 800px; /* Limit the width for better readability */
+  text-align: center; /* Center the text */
+  margin-bottom: 150px; /* Space below the text */
+}
+
+/* Skills Section Styling */
+.skills {
+  list-style: none; /* Remove default list styling */
+  padding: 0px; /* Remove default padding */
+  margin-top: 20px; /* Decrease the space above the skills list */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the list horizontally */
+  gap: 30px; /* Space between skill items */
+}
+
+.skills li {
+  font-size: 1.5rem; /* Font size for skills */
+  color: #4b2e39; /* Matching text color */
+  margin: 0; /* No margin for skill items */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem; /* Adjust title size for mobile */
+  }
+
+  .about-description {
+    font-size: 1.2rem; /* Adjust description size for mobile */
+  }
+
+  .skills li {
+    font-size: 1rem; /* Adjust skill size for mobile */
+  }
+}
+
+/* Existing styles above... */
+
+/* Existing styles above... */
+
+/* Bubbling effect for each letter */
+.bubbling-letter {
+  display: inline-block; /* To apply transform individually */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+  position: relative; /* For positioning the bubble effect */
+  color: #4b2e39; /* Default color */
+}
+
+.bubbling-letter:hover {
+  transform: translateY(-10px) scale(1.2); /* Bubble effect */
+  color: #ff6347; /* Change color on hover */
+}
+
+/* Space class for maintaining spacing */
+.space {
+  display: inline-block; /* Ensure spaces are maintained */
+  width: 0.5em; /* Adjust width as needed */
+}
+
+/* Existing styles below... */
+
+
+
+/* Projects Section Styling */
+.projects {
+  position: relative;
+  z-index: 10; /* Ensure it stays above the background boxes */
+  padding: 20px; /* Add padding around the projects section */
+}
+
+
+
+/* Project List Styling */
+/* Project List Styling */
+.project-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping to the next line if there's not enough space */
+  gap: 100px; /* Space between project items */
+  justify-content: center; /* Center the list horizontally */
+}
+
+
+/* Individual Project Item Styling */
+.project-item {
+  margin: 70px 0; /* Space between project items */
+  padding: 20px; /* Padding inside each project item */
+  width: 500px; /* Border color matching the theme */
+  height: 500px; /* Rounded corners for project items */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+/* Hover Effect for Project Items */
+.project-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+/* Project Name Styling */
+.project-name {
+  font-size: 2rem; /* Larger font for project name */
+  color: #4b2e39; /* Matching theme color */
+}
+
+/* Project Description Styling */
+.project-description {
+  font-size: 1.2rem; /* Adjusted font size for description */
+  margin: 2px 0; /* Space around description */
+}
+
+/* Project Links Styling */
+/* Project Links Styling */
+.project-links {
+  margin-top: 20px; /* Adjust space above the links */
+  margin-left: 80px; /* Reset left margin */
+}
+
+/* Image Styling for GitHub Link */
+.project-links img {
+  width: 300px; /* Set width for the GitHub icon */
+  height: 250px; /* Set height for the GitHub icon */
+  display: block; /* Make sure it behaves as a block element */
+  border-radius: 10px;
+}
+
+
+/* Hover Effect for Links */
+.project-link:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
